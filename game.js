@@ -3,19 +3,13 @@ var gamePattern = [];
 var userClickedPattern = [];
 var levelNo = 0;
 
-$(document).keypress(function (event) {
-    if (event.key == "a" || event.key == "A") {
-        $("#level-title").text("Level " + levelNo);
-        nextSequence();
-    }
-
-    if (event.key == "r" || event.key == "R") {
-        gamePattern = [];
-        userClickedPattern = [];
-        levelNo = 0;
-        $("#level-title").text("Level " + levelNo);
-        nextSequence();
-    }
+$(".start-btn").click(function () {
+    $(this).css("visibility", "hidden");
+    gamePattern = [];
+    userClickedPattern = [];
+    levelNo = 0;
+    $("#level-title").text("Level " + levelNo);
+    nextSequence();
 })
 
 $(".btn").click(function () {
@@ -68,6 +62,7 @@ function checkAnswer(currLevel) {
             $("body").removeClass("game-over");
         }, 200)
 
-        $("h1").text("Game Over, Press R to restart!");
+        $("h1").text("Game Over, Start Again!");
+        $(".start-btn").css("visibility", "visible")
     }
 }
