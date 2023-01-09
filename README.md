@@ -1,2 +1,2 @@
 # the-att-21.github.io
-##A Simple Simon Game
+## A Simple Simon Game
